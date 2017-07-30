@@ -5,12 +5,12 @@ In this project the online portfolio <https://github.com/udacity/frontend-nanode
 
 #### Initial Performance
 - *FPS:* < 25
-- *Images' Resize Time:* > 140 ms
+- *Pizza Images' Resize Time:* > 140 ms
 - *Google PageSpeed Score for Mobile:* 71/100 <https://developers.google.com/speed/pagespeed/insights/>
 
 #### Performance after Optimization
 - *FPS:* >= 60
-- *Images' Resize Time:* < 5 ms
+- *Pizza Images' Resize Time:* < 5 ms
 - *Google PageSpeed Score for Mobile:* 90/100
 
 ### Optimizations Done
@@ -25,10 +25,15 @@ In this project the online portfolio <https://github.com/udacity/frontend-nanode
 - Compressed profile image
 - Minified perfmatters javscript
 
-#### To achieve a framerate of 60fps and time to resize pizza to less than 5ms
+#### To achieve FPS of 60fps and Pizza images' resize time < 5ms
+
+*Frame Pipeline: Javascript->Layout->Paint->Composite*
+
+On analyzing the performance it was found that page elements' repainting was a bottleneck. This was caused by violations of the above mentioned pipeline. The same was fixed by doing the following
+
 ##### views/js/main.js
 - Function changePizzaSizes:
-Defines newWidth for different pizza sizes and sets the same according to the size slider bar
+Defines newWidth for different pizza sizes and sets the same according to the size slider bar.
 Used getElementsByClassName for DOM reference instead of querySelector and moved it out of the loop to improve performance
 Removed determineDx and sizeSwitcher function and consolidated their work in changePizzaSizes
 
