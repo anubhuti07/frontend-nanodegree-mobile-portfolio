@@ -1,12 +1,12 @@
 
 ## Website Performance Optimization
 
-In this project the online portfolio <https://github.com/udacity/frontend-nanodegree-mobile-portfolio> has been optimized for speed. In particular, the critical rendering path has been optimized to make this page render as quickly as possible.
+In this project the [online portfolio](https://github.com/udacity/frontend-nanodegree-mobile-portfolio) has been optimized for speed. In particular, the critical rendering path has been optimized to make this page render as quickly as possible.
 
 #### Initial Performance
 - *FPS:* < 25
 - *Pizza Images' Resize Time:* > 140 ms
-- *Google PageSpeed Score for Mobile:* 71/100 <https://developers.google.com/speed/pagespeed/insights/>
+- *[Google PageSpeed](https://developers.google.com/speed/pagespeed/insights) Score for Mobile:* 71/100
 
 #### Performance after Optimization
 - *FPS:* >= 60
